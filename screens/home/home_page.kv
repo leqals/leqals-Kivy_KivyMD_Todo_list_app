@@ -1,0 +1,79 @@
+#: import get_color_from_hex kivy.utils.get_color_from_hex
+#: import CustomLabel components.utilities.CustomLabel
+#: import InputField components.utilities.InputField
+#: import CustomBtn components.utilities.CustomBtn
+#: import NavTop components.utilities.NavTop
+#: import NavBottom components.utilities.NavBottom
+#: import Todo components.todo.Todo
+
+ 
+<HomePage>:
+    md_bg_color: get_color_from_hex('EED8EF')
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        NavTop:
+        
+        MDFloatLayout:
+            
+            ScrollView:
+                bar_width: 0
+                MDBoxLayout:
+                    adaptive_height: True
+                    padding: dp(20)
+
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        adaptive_height: True
+                        spacing: '25dp'
+                        
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            adaptive_height: True
+                            spacing: '15dp'
+                            
+                            CustomLabel:
+                                text: 'ADD TODO'
+                                font_size: 20
+                                halign: 'left'
+                                
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                adaptive_height: True
+
+                                InputField:
+                                    id: 'title'
+                                    hint_text: 'Title'
+                                
+                                InputField:
+                                    id: 'description'
+                                    hint_text: 'Description'
+
+                                InputField:
+                                    id: 'Deadline'
+                                    hint_text: 'Dead-line'
+                                
+                                CustomBtn:
+                                    marup: True
+                                    text: '           [b]ADD[/b]             '
+
+                        MDBoxLayout:
+                            spacing: '6dp'
+                            id: Todos
+                            orientation: 'vertical'
+                            adaptive_height: True
+                            Todo:
+                            Todo:
+                            Todo:
+            
+
+                        Widget:    
+        NavBottom:
+
+                            
+                            
+
+
+
+

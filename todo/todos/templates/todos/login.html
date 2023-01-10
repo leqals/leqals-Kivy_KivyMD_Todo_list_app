@@ -1,0 +1,23 @@
+{% extends 'todos/base.html' %}
+
+{% block content %}
+<form class="form" action="doLogin/" method='POST'>
+    {% csrf_token %}
+    <center>
+        {% if messages %}
+            <div class="col-12">
+                {% for message in messages %}
+                {% if message.tags == 'error' %}
+                <div class="alert alert-danger text-center ">
+                    {{message }}
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div><input type="email" name='email' id='email' autocomplete required></div>
+        <div><input type="password" name='password' id='password' autocomplete  required></div>
+        <div><input type="submit" value='Login'></div>
+    </center>
+</form>
+{% endblock content %}

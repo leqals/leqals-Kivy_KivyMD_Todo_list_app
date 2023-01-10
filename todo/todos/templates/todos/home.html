@@ -1,0 +1,12 @@
+{% extends 'todos/base.html' %}
+
+{% block content %}
+<div style="width:80vw;height:100vh;display:flex;flex-direction:column;gap:2rem">
+    <div style="display:flex;flex-direction:column">
+        {% include "todos/form_template.html" with messages=messages  form=form button_text="Add Todo"%}
+    </div>
+    {% for todo in todos %}
+        <li>{{todo}}</li>
+    {% endfor %}
+</div>
+{% endblock content %}

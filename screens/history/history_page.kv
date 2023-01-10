@@ -1,0 +1,117 @@
+<HistoryPage>:
+    md_bg_color: get_color_from_hex('EED8EF')
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        NavTop:
+        
+        MDFloatLayout:
+            
+            ScrollView:
+                bar_width: 0
+                MDBoxLayout:
+                    adaptive_height: True
+                    padding: dp(20)
+
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        adaptive_height: True
+                        spacing: '25dp'
+                    
+                    
+
+                        # Historys
+
+                        MDCard: 
+                            orientation: 'vertical'
+                            adaptive_height: True
+                            paddding: [0,20,0,0]
+                            CustomLabel:
+                                text: 'History'
+                                halign: 'center'
+                                font_size: 24
+                            
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            id: histories
+                            adaptive_height: True
+                            spacing: '25dp'
+
+                            # History 
+                            History:
+                            History:
+                            History:
+                            History:
+                            History:
+                            History:
+                            History:
+                            History:
+                            History:
+                            History:
+                            History:
+                            History:
+                            History:
+                            History:
+                            History:
+                            History:
+                            # History:
+        NavBottom:
+            
+
+<History>:
+    orientation: 'vertical'
+    adaptive_height: True
+
+    MDRelativeLayout:
+        pos_hint: {'center_x': 0.5}
+        spacing: '6dp'
+        padding: 5
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: 5
+            md_bg_color: [124/255, 24/255, 127/255, 0.15]
+            pos_hint: {'center_x': 0.5}
+            radius: [6,]
+
+            CustomLabel:
+                text: root.hTitle
+                font_size: 15
+            CustomLabel:
+                text: root.hDes
+                font_size: 12
+                bold: False
+
+            Widget:
+        MDCard:
+            orientation: 'vertical'
+            padding: 5
+            md_bg_color: get_color_from_hex('F6EBF7')
+            opacity: 0.76
+            radius: [6,]
+            size_hint: None, None
+            size: '70dp','30dp'
+            pos_hint: {'x': 0.65, 'center_y': -0.01}
+
+            CustomLabel:
+                text: root.hTime
+                text_color: [0,0,0,0.75]
+                font_size: 11
+                halign: 'center'
+
+
+                                        
+
+                                        
+
+                                        
+                                        
+
+                                
+
+
+
+
+
+

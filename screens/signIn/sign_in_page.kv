@@ -1,0 +1,81 @@
+#: import get_color_from_hex kivy.utils.get_color_from_hex
+#: import CustomLabel components.utilities.CustomLabel
+#: import InputField components.utilities.InputField
+#: import CustomBtn components.utilities.CustomBtn
+
+
+<SignInPage>
+    md_bg_color: get_color_from_hex('EED8EF')
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint: 1, 1
+        padding: 20
+        spacing: '15dp'
+
+        MDFloatLayout:
+            orientation: 'vertical'
+            size_hint: 1, .5
+            FitImage:
+                source: 'Assets/images/Logo-big.png'
+                pos_hint: {'center_x': 0.4,'center_y': 0.2}
+                size_hint: None, None
+                size: (root.width * 0.65) ,(root.height * 0.65)
+        
+        MDFloatLayout:
+            orientation: 'vertical'
+            padding: dp(10)
+
+
+            CustomLabel:
+                text: "Sign In"
+                font_size: 20
+                halign: 'left'
+                pos_hint: {'center_x': 0.5,'center_y': 0.95}
+                
+            InputField:
+                hint_text: 'Email'
+                id: email
+                pos_hint: {'center_x': 0.5,'center_y': 0.8}
+            
+            InputField: 
+                hint_text: 'Password'
+                id: password
+                password: True
+                pos_hint: {'center_x': 0.5,'center_y': 0.65}
+
+            
+            FitImage:
+                source: 'Assets/images/Decor-path.png'
+                pos_hint: {'center_x': 0.5,'center_y': 0.6}
+                size_hint: None, None
+                size: root.width, root.height * 0.7
+
+            MDBoxLayout:
+                size_hint: 1, 1
+                pos_hint: {'center_x': 0.5,'center_y': 0.4}
+                adaptive_height: True
+                
+
+                CustomBtn:
+                    markup: True
+                    text: '          [b]Login[/b]          '
+                    pos_hint: {'center_y': 0.5}
+                    elevation: 5
+                    on_press: 
+                        isEmail, isPassword = root.get_data()
+                        if isEmail and isPassword: app.get_running_app().root.current = 'home'
+                
+            
+            MDBoxLayout:
+                rows: 2
+                pos_hint: {'center_x': 0.5,'center_y': 0.2}
+
+                CustomLabel:
+                    text: "Sign Up"
+                    halign: 'left'
+
+                CustomLabel:
+                    text: "Forgot password"
+                    halign: 'right'
+
+    

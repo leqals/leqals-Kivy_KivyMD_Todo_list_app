@@ -1,0 +1,65 @@
+#: import CustomLabel components.utilities.CustomLabel
+
+<Todo>:
+    padding: dp(5)
+    spacing: '12dp'
+    md_bg_color: [1,0,1,.05]
+    radius: [10,]
+    size_hint: 1, None
+    height: dp(100)
+
+    MDCard: 
+        elevation: 0
+        size_hint: None, 1
+        width: dp(5)
+        md_bg_color: [241/255, 90/255, 36/255, 0.65] if root.isDone else [199/255, 227/255, 164/255, 1]
+        radius: [2,]
+        
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: '4dp'
+        padding: dp(5)
+        md_bg_color: [1,0,1,.15]
+        radius: [5,]
+
+        CustomLabel:
+            text: root.title
+            font_size: 16
+            bold: True
+
+        CustomLabel:
+            text: root.description
+            font_size: 12
+            theme_text_color: 'Custom'
+            text_color: [0,0,0,0.85]
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            spacing: '10dp'
+    
+            MDBoxLayout:
+                orientation: 'horizontal'
+                spacing: '2dp'
+
+                MDIconButton:
+                    icon: 'delete-circle'
+                    icon_color: [241/255, 90/255, 36/255, 0.65]
+                    pos_hint: {'center_x': 0.0,'center_y': 0.5}
+                    on_release: root.delete_todo()
+                
+                MDCheckbox:
+                    pos_hint: {'center_x': 0.0,'center_y': 0.5}
+                    on_release: root.toggle()
+
+            CustomLabel: 
+                text: root.deadline 
+                bold: True 
+                font_size: 10
+                theme_text_color: 'Custom'
+                text_color: [0,0,0,0.75]
+        
+            
+
+
+    

@@ -1,0 +1,54 @@
+<CustomLabel>:
+    theme_text_color: 'Custom'
+    text_color: get_color_from_hex('1A1A1A')
+    font_size: 17
+    valign: 'center'
+    bold: True
+
+<InputField>:
+    adaptive_height: True
+    radius: [10,]
+
+<CustomBtn>:
+    md_bg_color: get_color_from_hex('C7E3A4')
+    theme_text_color: 'Custom'
+    text_color: get_color_from_hex('000000')
+    halign: 'center'
+    valign: 'center'
+    radius: [10,]
+
+<NavTop>:
+    adaptive_height: True
+    size_hint: 1, None
+    height: dp(100)
+    orientation: 'vertical'
+    Image:
+        source: 'Assets/images/Logo.png'
+        size_hint: None, None
+        size: '90dp','90dp'
+        pos_hint: {'center_x': 0.18, 'center_y': 0.5}
+
+    MDSeparator:
+
+<NavBottom>:
+    adaptive_height: True
+    spacing: '10dp'
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    md_bg_color: get_color_from_hex('EED8EF')
+
+    size_hint: 1, None
+    height: dp(45)
+    columns: 2
+
+    MDFloatLayout:
+        MDIconButton:
+            icon: 'home'     
+            pos_hint: {'center_x': 0.5,'center_y': 0.5}
+            on_press: app.get_running_app().root.current = 'home'
+
+    MDFloatLayout:
+        MDIconButton:
+            icon: 'stack-exchange' 
+            pos_hint: {'center_x': 0.5,'center_y': 0.5}
+            on_press: app.get_running_app().root.current = 'history'
+            
